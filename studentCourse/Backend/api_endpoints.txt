@@ -1,0 +1,65 @@
+# Flight Booking App API Endpoints
+
+Base URL: `http://localhost:8081/api`
+
+## 1. Customers
+- **Register Customer**
+  - Path: `POST /customers/register`
+  - Body:
+    ```json
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "9876543210"
+    }
+    ```
+- **List All Customers**
+  - Path: `GET /customers/all`
+- **Get Customer by ID**
+  - Path: `GET /customers/{id}`
+
+## 2. Flights
+- **Add Flight**
+  - Path: `POST /flights/add`
+  - Body:
+    ```json
+    {
+      "flightNumber": "AI-101",
+      "origin": "Bangalore",
+      "destination": "Delhi",
+      "departureTime": "2024-03-01T10:00:00",
+      "totalSeats": 100,
+      "price": 5000.0
+    }
+    ```
+- **List All Flights**
+  - Path: `GET /flights/all`
+- **Get Flight Details**
+  - Path: `GET /flights/{flightNumber}`
+
+## 3. Bookings
+- **Book a Flight**
+  - Path: `POST /bookings/book`
+  - Body:
+    ```json
+    {
+      "customerId": "65e1abd...",
+      "flightNumber": "AI-101",
+      "passengerName": "Alice Smith"
+    }
+    ```
+- **Cancel Booking**
+  - Path: `POST /bookings/cancel/{bookingId}`
+- **List All Bookings**
+  - Path: `GET /bookings/all`
+- **Get Customer Stats (Bookings by Customer)**
+  - Path: `GET /bookings/customer/{customerId}`
+
+## Standard Response Format
+```json
+{
+  "success": true,
+  "message": "Operation successful",
+  "data": { ... }
+}
+```
