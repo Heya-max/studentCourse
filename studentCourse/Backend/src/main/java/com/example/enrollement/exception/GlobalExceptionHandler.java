@@ -1,7 +1,6 @@
 package com.example.enrollement.exception;
 
 import com.example.enrollement.dto.ApiResponse;
-import com.example.enrollement.exception.CapacityFullException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
